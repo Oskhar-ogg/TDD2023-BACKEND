@@ -1,0 +1,33 @@
+@api = http://localhost:3000/agenda
+@api2 = http://localhost:3000/bitacora
+
+GET {{api2}}
+###
+GET {{api}}/3
+###
+GET {{api}}/count
+###
+
+POST {{api}}
+Content-Type: application/json
+
+{ 
+    "agenda_cliente": "Cliente 10",
+    "agenda_direccion": "Dirección 10",
+    "agenda_hora": "14:00",
+    "agenda_fecha": "2023-07-06"
+  }
+
+###
+POST {{api2}}
+Content-Type: application/json
+
+ {
+    "bitacora_title": "Prueba del POST en sala",
+    "bitacora_description": "Estoy siendo evaludo por la profe ",
+    "bitacora_estado": "En Proceso",
+    "bitacora_pago": "No",
+    "bitacora_valor_cobrado": "0",
+    "bitacora_foto": "Debería ser un archivo, pero hay un drama con expo :c",
+    "bitacora_fecha": "2023-07-07"
+  }
