@@ -28,7 +28,7 @@ router.get('/bitacora/count', getBitacoraCount)
  * @swagger
  * /bitacora/count:
  *      get:
- *          summary: Carga una bitácora por id
+ *          summary: Suma la cantidad total de bitácoras ingresadas.
  *          tags: [Bitacoras]
  */
 
@@ -38,7 +38,7 @@ router.get('/bitacora/:id', getBitacoras)
  * @swagger
  * /bitacora/{id}:
  *       get:
- *          summary: Obtiene la cantidad total de bitácoras ingresadas.
+ *          summary: Obtiene una bitácora por id.
  *          tags: [Bitacoras]
  */
 

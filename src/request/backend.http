@@ -1,7 +1,7 @@
 @api = http://localhost:3000/agenda
 @api2 = http://localhost:3000/bitacora
 
-GET {{api2}}
+GET {{api2}}/15
 ###
 GET {{api}}/3
 ###

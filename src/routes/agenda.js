@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAgenda, saveAgenda, updateAgenda, deleteAgenda } from '../controllers/agenda';
+import { getAgenda, getAgendas, saveAgenda, updateAgenda, deleteAgenda } from '../controllers/agenda';
 
 const router = Router();
 
@@ -19,6 +19,16 @@ router.get('/agenda', getAgenda);
  *     summary: Carga la lista de agendas.
  *     tags: [Agenda]
  */
+
+router.get('/agenda/:id', getAgendas);
+
+/**
+ * @swagger
+ * /agenda/{id}:
+ *  get:
+ *   summary: Carga una agenda por id.
+ *  tags: [Agenda]
+*/
 
 router.post('/agenda', saveAgenda);
 
