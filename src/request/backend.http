@@ -3,7 +3,7 @@
 
 GET {{api2}}/15
 ###
-GET {{api}}/3
+GET {{api}}
 ###
 GET {{api}}/count
 ###
@@ -12,10 +12,10 @@ POST {{api}}
 Content-Type: application/json
 
 { 
-    "agenda_cliente": "Cliente 10",
-    "agenda_direccion": "Dirección 10",
+    "agenda_cliente": "Americo",
+    "agenda_direccion": "Concepción",
     "agenda_hora": "14:00",
-    "agenda_fecha": "2023-07-06"
+    "agenda_fecha": "2023-07-14"
   }
 
 ###

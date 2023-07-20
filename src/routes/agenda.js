@@ -10,7 +10,7 @@ const router = Router();
  *   description: Agenda API
  */
 
-router.get('/agenda', getAgenda);
+router.get('/agenda/', getAgenda);
 
 /**
  * @swagger
@@ -30,7 +30,7 @@ router.get('/agenda/:id', getAgendas);
  *  tags: [Agenda]
 */
 
-router.post('/agenda', saveAgenda);
+router.post('/agenda/', saveAgenda);
 
 /**
  * @swagger

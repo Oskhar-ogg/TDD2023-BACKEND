@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 
 app.use(bodyParser.json());
 
+
 // Resto del código del servidor...
 
 app.listen(3000, () => {
