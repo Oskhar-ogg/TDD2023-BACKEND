@@ -49,7 +49,7 @@ router.get('/bitacora/total', MontoBitacora)
  * /bitacora/total:
  *     get:
  *         summary: Obtiene el monto total ganado de los trabajos realizados.
- *        tags: [Bitacoras]
+ *         tags: [Bitacoras]
 */
 
 router.get('/bitacora/mes', MontoMesBitacora)
@@ -59,7 +59,7 @@ router.get('/bitacora/mes', MontoMesBitacora)
  * /bitacora/mes:
  *    get:
  *       summary: Obtiene el monto total ganado de los trabajos realizados en el mes actual.
- *      tags: [Bitacoras]
+ *       tags: [Bitacoras]
  * 
 */
 
