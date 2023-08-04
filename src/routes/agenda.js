@@ -27,7 +27,7 @@ router.get('/agenda/:id', getAgendas);
  * /agenda/{id}:
  *  get:
  *   summary: Carga una agenda por id.
- *  tags: [Agenda]
+ *   tags: [Agenda]
 */
 
 router.post('/agenda/', saveAgenda);
