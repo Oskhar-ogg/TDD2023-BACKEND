@@ -3,7 +3,7 @@ import {connection} from '../basedd.js';
 export const getMantencionesCaldera = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('SELECT * FROM mantenimiento_caldera');
+        const [rows] = await db.query('SELECT * FROM Mantenimiento_historico_caldera');
         res.json(rows);
     } catch (error) {
         console.error(error);
@@ -14,7 +14,7 @@ export const getMantencionesCaldera = async (req, res) => {
 export const getMantencionesCalefont = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('SELECT * FROM mantenimiento_calefont');
+        const [rows] = await db.query('SELECT * FROM Mantenimiento__historico_calefont');
         res.json(rows);
     } catch (error) {
         console.error(error);
