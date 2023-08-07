@@ -25,7 +25,7 @@ cd TDD2023-BACKEND/
    'npm start'
 
 6. **Verificar rutas de la api**:
-   'http://<localhost>:3000/docs'.
+   'http://localhost:3000/docs'.
 
 Recuerda reemplazar la url LOCALHOST por la ip de tu servidor virtual.
 Como este proyecto funciona alojado con los servicios de LA FACE UBB
