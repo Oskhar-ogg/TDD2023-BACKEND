@@ -14,34 +14,34 @@ router.get('/clientes', getClientes);
 
 /**
  * @swagger
- * /clientes:
- * get:
- * summary: Carga la lista de clientes.
- * tags: [Clientes]
+ *      /clientes:
+ *          get:
+ *          summary: Carga la lista de clientes.
+ *          tags: [Clientes]
  * */
 
 router.delete('/clientes/:id', deleteCliente);
 
 /**
  * @swagger
- * /clientes/{id}:
- * delete:
- * summary: Elimina un cliente.
- * tags: [Clientes]
- * parameters:
- *     - in: path
- *      name: id
- *     schema:
- *     type: integer
- *    required: true
- *   description: El id del cliente
- * responses:
- * 200:
- * description: El cliente fue eliminado correctamente
- * 404:
- * description: El cliente no existe
- * 500: 
- * description: Error interno del servidor
+ *      /clientes/{id}:
+ *          delete:
+ *          summary: Elimina un cliente.
+ *          tags: [Clientes]
+ *          parameters:
+ *          - in: path
+ *           name: id
+ *          schema:
+ *          type: integer
+ *          required: true
+ *          description: El id del cliente
+ *          responses:
+ *          200:
+ *          description: El cliente fue eliminado correctamente
+ *          404:
+ *          description: El cliente no existe
+ *          500: 
+ *          description: Error interno del servidor
  * */
 
 export default router;
