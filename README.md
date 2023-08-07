@@ -9,7 +9,7 @@ Bienvenido al BackEnd de MDIAPP, por si aun no has descargado el FrontEnd está 
 
 1. **Clonar el Repositorio**: Si aún no tienes el repositorio, clónalo en tu máquina local:
 
-git clone [<URL_DEL_REPOSITORIO_BACKEND.git>](https://github.com/Oskhar-ogg/TDD2023-BACKEND.git)https://github.com/Oskhar-ogg/TDD2023-BACKEND.git
+git clone https://github.com/Oskhar-ogg/TDD2023-BACKEND.git
  
 2. **Acceder al Directorio del Backend**:
 
