@@ -32,16 +32,16 @@ router.delete('/clientes/:id', deleteCliente);
  *          - in: path
  *           name: id
  *          schema:
- *          type: integer
- *          required: true
- *          description: El id del cliente
- *          responses:
- *          200:
- *          description: El cliente fue eliminado correctamente
- *          404:
- *          description: El cliente no existe
- *          500: 
- *          description: Error interno del servidor
+ *              type: integer
+ *              required: true
+ *              description: El id del cliente
+ *              responses:
+ *                  200:
+ *                      description: El cliente fue eliminado correctamente
+ *                  404:
+ *                      description: El cliente no existe
+ *                  500: 
+ *                      description: Error interno del servidor
  * */
 
 export default router;
