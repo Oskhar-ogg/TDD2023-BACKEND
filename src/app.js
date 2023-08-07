@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import bitacoraRoutes from './routes/bitacora';
 import agendaRoutes from './routes/agenda';
-import clienteRoutes from './routes/cliente';
+import clienteRoutes from './routes/clientes';
 import mantencionesRoutes from './routes/mantenciones';
 import { swaggerOptions } from './swaggerOpt.js';
 
