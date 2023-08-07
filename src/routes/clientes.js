@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getClientes, deleteCliente } from '../controllers/clientes.js';
+import { getClientes, deleteCliente, getClienteHistoricoCaldera, getClienteHistoricoCalefont } from '../controllers/clientes.js';
 
 const router = Router();
 
@@ -17,6 +17,26 @@ router.get('/clientes', getClientes);
  * /clientes:
  *   get:
  *     summary: Obtiene todos los clientes
+ *     tags: [Clientes]
+ */
+
+router.get('/clientes/calderas', getClienteHistoricoCaldera);
+
+/** 
+ * @swagger
+ * /clientes:
+ *   get:
+ *     summary: Obtiene el historico de mantenciones realizadas a la caldera del cliente
+ *     tags: [Clientes]
+ */
+
+router.get('/clientes/calefonts', getClienteHistoricoCalefont);
+
+/** 
+ * @swagger
+ * /clientes:
+ *   get:
+ *     summary: Obtiene el historico de mantenciones realizadas al calefont del cliente
  *     tags: [Clientes]
  */
 

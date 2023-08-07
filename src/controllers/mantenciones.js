@@ -3,7 +3,7 @@ import {connection} from '../basedd.js';
 export const getMantencionesCaldera = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('SELECT * FROM Mantenimiento_historico_caldera');
+        const [rows] = await db.query('SELECT * FROM mantenimiento_caldera');
         res.json(rows);
     } catch (error) {
         console.error(error);
@@ -13,7 +13,7 @@ export const getMantencionesCaldera = async (req, res) => {
 export const saveMantencionesCaldera = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('INSERT INTO Mantenimiento_historico_caldera SET ?', [req.body]);
+        const [rows] = await db.query('INSERT INTO mantenimiento_caldera SET ?', [req.body]);
         res.json(rows);
     } catch (error) {
         console.error(error);
@@ -24,7 +24,7 @@ export const saveMantencionesCaldera = async (req, res) => {
 export const getMantencionesCalefont = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('SELECT * FROM Mantenimiento_historico_calefont');
+        const [rows] = await db.query('SELECT * FROM mantenimiento_calefont');
         res.json(rows);
     } catch (error) {
         console.error(error);
@@ -35,7 +35,7 @@ export const getMantencionesCalefont = async (req, res) => {
 export const saveMantencionesCalefont = async (req, res) => {
     try {
         const db = await connection();
-        const [rows] = await db.query('INSERT INTO Mantenimiento_historico_calefont SET ?', [req.body]);
+        const [rows] = await db.query('INSERT INTO mantenimiento_calefont SET ?', [req.body]);
         res.json(rows);
     } catch (error) {
         console.error(error);
