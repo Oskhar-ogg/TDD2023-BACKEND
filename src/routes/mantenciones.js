@@ -14,19 +14,19 @@ router.get('/mantenciones/caldera', getMantencionesCaldera);
 
 /**
  * @swagger
- *      /mantenciones/caldera:
- *          get:
- *              summary: Carga la lista de mantenciones de caldera.
- *              tags: [Mantenciones]
+ * /mantenciones/caldera:
+ *      get:
+ *          summary: Carga la lista de mantenciones de caldera.
+ *          tags: [Mantenciones]
  * */
 
 router.get('/mantenciones/calefont', getMantencionesCalefont);
 
 /**
  * @swagger
- *      /mantenciones/calefont:
- *          get:
- *              summary: Carga la lista de mantenciones de calefont.
- *              tags: [Mantenciones]
+ * /mantenciones/calefont:
+ *      get:
+ *          summary: Carga la lista de mantenciones de calefont.
+ *          tags: [Mantenciones]
  * */
 export default router;
