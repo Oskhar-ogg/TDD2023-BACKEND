@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { getMantencionesCaldera, getMantencionesCalefont } from "../controllers/mantenciones";
+import {
+  getMantencionesCaldera,
+  saveMantencionesCaldera,
+  getMantencionesCalefont,
+  saveMantencionesCalefont,
+} from "../controllers/mantenciones";
 
 const router = Router();
 
@@ -29,5 +34,17 @@ router.get('/mantenciones/calefont', getMantencionesCalefont);
  *     summary: Obtiene todas las mantenciones de caldera
  *     tags: [Mantenciones]
  */
+
+router.post('/mantenciones/caldera', saveMantencionesCaldera);
+
+/**
+ * @swagger
+ * /mantenciones/calefont:
+ *   post:
+ *     summary: Crea una nueva mantencion de calefont
+ *     tags: [Mantenciones]
+ */
+
+router.post('/mantenciones/calefont', saveMantencionesCalefont);
 
 export default router;
