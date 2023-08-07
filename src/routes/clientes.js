@@ -7,7 +7,7 @@ const router = Router();
  * @swagger
  * tags:
  *     name: Clientes
- *    description: Clientes API
+ *          description: Clientes API
  * */
 
 router.get('/clientes', getClientes);
@@ -16,8 +16,8 @@ router.get('/clientes', getClientes);
  * @swagger
  *      /clientes:
  *          get:
- *          summary: Carga la lista de clientes.
- *          tags: [Clientes]
+ *              summary: Carga la lista de clientes.
+ *              tags: [Clientes]
  * */
 
 router.delete('/clientes/:id', deleteCliente);
@@ -26,15 +26,15 @@ router.delete('/clientes/:id', deleteCliente);
  * @swagger
  *      /clientes/{id}:
  *          delete:
- *          summary: Elimina un cliente.
- *          tags: [Clientes]
- *          parameters:
- *          - in: path
- *           name: id
- *          schema:
- *              type: integer
- *              required: true
- *              description: El id del cliente
+ *              summary: Elimina un cliente.
+ *              tags: [Clientes]
+ *              parameters:
+ *                  - in: path
+ *                  name: id
+ *              schema:
+ *                  type: integer
+ *                   required: true
+ *                      description: El id del cliente
  *              responses:
  *                  200:
  *                      description: El cliente fue eliminado correctamente
