@@ -1,0 +1,1 @@
+docker build --build-arg GITHUB_USERNAME=Oskhar-ogg --build-arg GITHUB_TOKEN=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 -t react-native

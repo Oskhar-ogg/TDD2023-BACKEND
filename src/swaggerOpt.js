@@ -1,7 +1,7 @@
 export const swaggerOptions = {
     definition : {
         info: {
-            title: "Bitacora API"
+            title: "MDIAPP API"
     }
     },
     apis: ['./src/routes/**/*.js']
