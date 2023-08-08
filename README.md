@@ -16,14 +16,17 @@ git clone https://github.com/Oskhar-ogg/TDD2023-BACKEND.git
 cd TDD2023-BACKEND/
 
 3. **Instalar Dependencias**:
-'npm i'
-
+```bash
+npm install
+```
 4. **Compilar carpeta dist**:
-   'npm run build'
-
+```bash
+npm run build
+```
 5. **Iniciar Backend**:
-   'npm start'
-
+```bash
+npm start
+```
 6. **Verificar rutas de la api**:
    'http://localhost:3000/docs'.
 
