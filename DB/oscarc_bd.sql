@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 08-08-2023 a las 11:02:21
+-- Tiempo de generación: 08-08-2023 a las 18:10:53
 -- Versión del servidor: 8.0.34
 -- Versión de PHP: 7.4.33
 
@@ -73,7 +73,8 @@ INSERT INTO `bitacora` (`bitacora_id`, `bitacora_title`, `bitacora_description`,
 (3, 'Switch Pasó la prueba', 'Ok', 'Finalizado', '0', '2023-07-20', 1),
 (15, 'Refreshing Finalizado', 'Se puede refrescar la bitácora', 'Finalizado', '0', '2023-07-06', 1),
 (16, 'Última prueba', 'Modificación BD / INGRESO', 'Finalizado', '0', '2023-07-20', 1),
-(17, 'Texto de prueba', 'Descripcion de prueba', 'Vigente', '15000', '2023-07-07', 1);
+(17, 'Texto de prueba', 'Descripcion de prueba', 'Vigente', '15000', '2023-07-07', 1),
+(18, 'Link técnico con bitácora ', 'Debería guardar esta bitácora sin problemas en caso de estar correcto', 'Vigente', '0', '2023-08-08', 1);
 
 -- --------------------------------------------------------
 
@@ -180,26 +181,26 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cliente_id`, `cliente_nombre`, `cliente_direccion`, `cliente_telefono`, `comuna_id`) VALUES
-(1, 'Cliente 1', 'Dirección 1', '123456789', 1),
+(1, 'Oscar Caro', 'Colón 1197', '931159926', 1),
 (2, 'Cliente 2', 'Dirección 2', '987654321', 2),
-(3, 'Cliente 3', 'Dirección 3', '456789123', 3),
-(4, 'Cliente 4', 'Dirección 4', '321654987', 4),
-(5, 'Cliente 5', 'Dirección 5', '789123456', 5),
-(6, 'Cliente 6', 'Dirección 6', '654987321', 6),
-(7, 'Cliente 7', 'Dirección 7', '321789654', 7),
-(8, 'Cliente 8', 'Dirección 8', '789654321', 1),
-(9, 'Cliente 9', 'Dirección 9', '456321789', 2),
-(10, 'Cliente 10', 'Dirección 10', '321789456', 3),
-(11, 'Cliente 11', 'Dirección 11', '789456123', 4),
-(12, 'Cliente 12', 'Dirección 12', '456123789', 5),
-(13, 'Cliente 13', 'Dirección 13', '123789456', 6),
-(14, 'Cliente 14', 'Dirección 14', '789456789', 7),
-(15, 'Cliente 15', 'Dirección 15', '456789456', 1),
-(16, 'Cliente 16', 'Dirección 16', '123456123', 2),
+(3, 'Cliente 3', 'Dirección 3', '956789123', 3),
+(4, 'Cliente 4', 'Dirección 4', '921654987', 4),
+(5, 'Cliente 5', 'Dirección 5', '989123456', 5),
+(6, 'Cliente 6', 'Dirección 6', '954987321', 6),
+(7, 'Cliente 7', 'Dirección 7', '921789654', 7),
+(8, 'Cliente 8', 'Dirección 8', '989654321', 1),
+(9, 'Cliente 9', 'Dirección 9', '956321789', 2),
+(10, 'Cliente 10', 'Dirección 10', '921789456', 3),
+(11, 'Cliente 11', 'Dirección 11', '989456123', 4),
+(12, 'Cliente 12', 'Dirección 12', '956123789', 5),
+(13, 'Cliente 13', 'Dirección 13', '923789456', 6),
+(14, 'Cliente 14', 'Dirección 14', '989456789', 7),
+(15, 'Cliente 15', 'Dirección 15', '956789456', 1),
+(16, 'Cliente 16', 'Dirección 16', '923456123', 2),
 (17, 'Cliente 17', 'Dirección 17', '987321987', 3),
-(18, 'Cliente 18', 'Dirección 18', '654987654', 4),
-(19, 'Cliente 19', 'Dirección 19', '321654321', 5),
-(20, 'Cliente 20', 'Dirección 20', '789321789', 6);
+(18, 'Cliente 18', 'Dirección 18', '954987654', 4),
+(19, 'Cliente 19', 'Dirección 19', '921654321', 5),
+(20, 'Cliente 20', 'Dirección 20', '989321789', 6);
 
 -- --------------------------------------------------------
 
@@ -245,7 +246,8 @@ CREATE TABLE `mantenimiento_caldera` (
 --
 
 INSERT INTO `mantenimiento_caldera` (`mantenimiento_caldera_id`, `tecnico_id`, `caldera_id`, `cliente_id`, `mantenimiento_fecha`, `mantenimiento_descripcion`) VALUES
-(1, 1, 1, 1, '2023-08-06', 'Cambio quemador, solución error e10, cambio de sensores de seguridad');
+(1, 1, 1, 1, '2023-08-06', 'Cambio quemador, solución error e10, cambio de sensores de seguridad'),
+(2, 1, 19, 3, '2023-08-01', 'Se hizo reemplazo de pieza de agua');
 
 -- --------------------------------------------------------
 
@@ -267,7 +269,8 @@ CREATE TABLE `mantenimiento_calefont` (
 --
 
 INSERT INTO `mantenimiento_calefont` (`mantenimiento_calefont_id`, `tecnico_id`, `calefont_id`, `cliente_id`, `mantenimiento_fecha`, `mantenimiento_descripcion`) VALUES
-(1, 1, 1, 1, '2023-08-06', 'Reemplazo de membrana GAS');
+(1, 1, 1, 1, '2023-08-06', 'Reemplazo de membrana GAS'),
+(2, 1, 14, 14, '2023-08-24', 'No se intervino el calefont, solo hubo que cambiar pilas');
 
 -- --------------------------------------------------------
 
@@ -280,6 +283,8 @@ CREATE TABLE `Mantenimiento_historico_caldera` (
 ,`caldera_modelo` varchar(60)
 ,`cliente_direccion` varchar(50)
 ,`cliente_nombre` varchar(50)
+,`codigo_caldera` int
+,`codigo_cliente` int
 ,`mantenimiento_descripcion` text
 ,`mantenimiento_fecha` date
 );
@@ -291,10 +296,12 @@ CREATE TABLE `Mantenimiento_historico_caldera` (
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `Mantenimiento_historico_calefont` (
-`calefont_marca` varchar(30)
+`calefont_id` int
+,`calefont_marca` varchar(30)
 ,`calefont_modelo` varchar(30)
 ,`cliente_direccion` varchar(50)
 ,`cliente_nombre` varchar(50)
+,`codigo_cliente` int
 ,`mantenimiento_descripcion` text
 ,`mantenimiento_fecha` date
 );
@@ -328,7 +335,7 @@ INSERT INTO `tecnico` (`tecnico_id`, `tecnico_nombre`, `tecnico_apellido`, `tecn
 --
 DROP TABLE IF EXISTS `Mantenimiento_historico_caldera`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`ocaro`@`%` SQL SECURITY DEFINER VIEW `Mantenimiento_historico_caldera`  AS SELECT `C`.`cliente_nombre` AS `cliente_nombre`, `C`.`cliente_direccion` AS `cliente_direccion`, `ca`.`caldera_marca` AS `caldera_marca`, `ca`.`caldera_modelo` AS `caldera_modelo`, `MC`.`mantenimiento_fecha` AS `mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` AS `mantenimiento_descripcion` FROM ((`cliente` `C` join `caldera` `ca` on((`C`.`cliente_id` = `ca`.`cliente_id`))) join `mantenimiento_caldera` `MC` on((`ca`.`caldera_id` = `MC`.`caldera_id`))) GROUP BY `C`.`cliente_nombre`, `C`.`cliente_direccion`, `ca`.`caldera_marca`, `ca`.`caldera_modelo`, `MC`.`mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`ocaro`@`%` SQL SECURITY DEFINER VIEW `Mantenimiento_historico_caldera`  AS SELECT `C`.`cliente_id` AS `codigo_cliente`, `C`.`cliente_nombre` AS `cliente_nombre`, `C`.`cliente_direccion` AS `cliente_direccion`, `ca`.`caldera_id` AS `codigo_caldera`, `ca`.`caldera_marca` AS `caldera_marca`, `ca`.`caldera_modelo` AS `caldera_modelo`, `MC`.`mantenimiento_fecha` AS `mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` AS `mantenimiento_descripcion` FROM ((`cliente` `C` join `caldera` `ca` on((`C`.`cliente_id` = `ca`.`cliente_id`))) join `mantenimiento_caldera` `MC` on((`ca`.`caldera_id` = `MC`.`caldera_id`))) GROUP BY `C`.`cliente_id`, `C`.`cliente_nombre`, `C`.`cliente_direccion`, `ca`.`caldera_id`, `ca`.`caldera_marca`, `ca`.`caldera_modelo`, `MC`.`mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` ;
 
 -- --------------------------------------------------------
 
@@ -337,7 +344,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`ocaro`@`%` SQL SECURITY DEFINER VIEW `Manten
 --
 DROP TABLE IF EXISTS `Mantenimiento_historico_calefont`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`ocaro`@`%` SQL SECURITY DEFINER VIEW `Mantenimiento_historico_calefont`  AS SELECT `C`.`cliente_nombre` AS `cliente_nombre`, `C`.`cliente_direccion` AS `cliente_direccion`, `cl`.`calefont_marca` AS `calefont_marca`, `cl`.`calefont_modelo` AS `calefont_modelo`, `MC`.`mantenimiento_fecha` AS `mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` AS `mantenimiento_descripcion` FROM ((`cliente` `C` join `calefont` `cl` on((`C`.`cliente_id` = `cl`.`cliente_id`))) join `mantenimiento_calefont` `MC` on((`cl`.`calefont_id` = `MC`.`calefont_id`))) GROUP BY `C`.`cliente_nombre`, `C`.`cliente_direccion`, `cl`.`calefont_marca`, `cl`.`calefont_modelo`, `MC`.`mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`ocaro`@`%` SQL SECURITY DEFINER VIEW `Mantenimiento_historico_calefont`  AS SELECT `C`.`cliente_id` AS `codigo_cliente`, `C`.`cliente_nombre` AS `cliente_nombre`, `C`.`cliente_direccion` AS `cliente_direccion`, `cl`.`calefont_id` AS `calefont_id`, `cl`.`calefont_marca` AS `calefont_marca`, `cl`.`calefont_modelo` AS `calefont_modelo`, `MC`.`mantenimiento_fecha` AS `mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` AS `mantenimiento_descripcion` FROM ((`cliente` `C` join `calefont` `cl` on((`C`.`cliente_id` = `cl`.`cliente_id`))) join `mantenimiento_calefont` `MC` on((`cl`.`calefont_id` = `MC`.`calefont_id`))) GROUP BY `C`.`cliente_id`, `C`.`cliente_nombre`, `C`.`cliente_direccion`, `cl`.`calefont_id`, `cl`.`calefont_marca`, `cl`.`calefont_modelo`, `MC`.`mantenimiento_fecha`, `MC`.`mantenimiento_descripcion` ;
 
 --
 -- Índices para tablas volcadas
@@ -422,7 +429,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `bitacora_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `bitacora_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `caldera`
@@ -452,7 +459,7 @@ ALTER TABLE `comuna`
 -- AUTO_INCREMENT de la tabla `mantenimiento_calefont`
 --
 ALTER TABLE `mantenimiento_calefont`
-  MODIFY `mantenimiento_calefont_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `mantenimiento_calefont_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tecnico`
