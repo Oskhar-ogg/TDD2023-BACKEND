@@ -39,8 +39,8 @@ export const saveBitacora = async (req, res) => {
     console.log(req.body); // Agregar esta línea para verificar los datos recibidos
     const connect = await connection();
     const [results] = await connect.query(
-      'INSERT INTO bitacora  (bitacora_title, bitacora_description, bitacora_estado, bitacora_valor_cobrado, bitacora_fecha) VALUES ( ?, ?, ?, ?, ?)',
-      [req.body.bitacora_title, req.body.bitacora_description, req.body.bitacora_estado, req.body.bitacora_valor_cobrado, req.body.bitacora_fecha]
+      'INSERT INTO bitacora  (bitacora_title, bitacora_description, bitacora_estado, bitacora_valor_cobrado, bitacora_fecha, tecnico_id) VALUES ( ?, ?, ?, ?, ?, ?)',
+      [req.body.bitacora_title, req.body.bitacora_description, req.body.bitacora_estado, req.body.bitacora_valor_cobrado, req.body.bitacora_fecha, req.body.tecnico_id]
     );
     
     res.json({
