@@ -8,24 +8,24 @@ Bienvenido al BackEnd de MDIAPP, por si aun no has descargado el FrontEnd está 
 ## Instalación y Configuración
 
 1. **Clonar el Repositorio**: Si aún no tienes el repositorio, clónalo en tu máquina local:
-
-git clone https://github.com/Oskhar-ogg/TDD2023-BACKEND.git
- 
+```bash
+   git clone https://github.com/Oskhar-ogg/TDD2023-BACKEND.git
+``` 
 2. **Acceder al Directorio del Backend**:
-
-cd TDD2023-BACKEND/
-
+```bash
+   cd TDD2023-BACKEND/
+```
 3. **Instalar Dependencias**:
 ```bash
-npm install
+   npm install
 ```
 4. **Compilar carpeta dist**:
 ```bash
-npm run build
+   npm run build
 ```
 5. **Iniciar Backend**:
 ```bash
-npm start
+   npm start
 ```
 6. **Verificar rutas de la api**:
    'http://localhost:3000/docs'.
