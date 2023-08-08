@@ -4,6 +4,8 @@ import {
   saveMantencionesCaldera,
   getMantencionesCalefont,
   saveMantencionesCalefont,
+  getMantenimientoCalderaCliente,
+  getMantenimientoCalefontCliente,
 } from "../controllers/mantenciones";
 
 const router = Router();
@@ -15,17 +17,7 @@ const router = Router();
  *   description: Ruta de Mantenciones
  */
 
-router.get('/mantenciones/caldera/:id', getMantencionesCaldera);
-
-/**
- * @swagger
- * /mantenciones/calefont:
- *   get:
- *     summary: Obtiene todas las mantenciones de calefont
- *     tags: [Mantenciones]
- */
-
-router.get('/mantenciones/calefont/:id', getMantencionesCalefont);
+router.get('/mantenciones/caldera/', getMantencionesCaldera);
 
 /**
  * @swagger
@@ -35,7 +27,27 @@ router.get('/mantenciones/calefont/:id', getMantencionesCalefont);
  *     tags: [Mantenciones]
  */
 
+router.get('/mantenciones/calefont/', getMantencionesCalefont);
+
+/**
+ * @swagger
+ * /mantenciones/calefont:
+ *   get:
+ *     summary: Obtiene todas las mantenciones de calefont
+ *     tags: [Mantenciones]
+ */
+
 router.post('/mantenciones/caldera', saveMantencionesCaldera);
+
+/**
+ * @swagger
+ * /mantenciones/caldera:
+ *   post:
+ *     summary: Crea una nueva mantencion de calefont
+ *     tags: [Mantenciones]
+ */
+
+router.post('/mantenciones/calefont', saveMantencionesCalefont);
 
 /**
  * @swagger
@@ -45,6 +57,26 @@ router.post('/mantenciones/caldera', saveMantencionesCaldera);
  *     tags: [Mantenciones]
  */
 
-router.post('/mantenciones/calefont', saveMantencionesCalefont);
+
+router.get('/mantenciones/caldera/:id', getMantenimientoCalderaCliente);
+
+/** 
+ * @swagger
+ * /mantenciones/caldera/{id}:
+ *   get:
+ *     summary: Obtiene todas las mantenciones de caldera de un cliente
+ *     tags: [Mantenciones]
+*/
+router.get('/mantenciones/calefont/:id', getMantenimientoCalefontCliente);
+
+/**
+ * @swagger
+ * /mantenciones/calefont/{id}:
+ *   get:
+ *     summary: Obtiene todas las mantenciones de calefont de un cliente
+ *     tags: [Mantenciones]
+*/
 
 export default router;
+
+
