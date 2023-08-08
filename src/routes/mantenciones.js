@@ -15,7 +15,7 @@ const router = Router();
  *   description: Ruta de Mantenciones
  */
 
-router.get('/mantenciones/caldera', getMantencionesCaldera);
+router.get('/mantenciones/caldera/:id', getMantencionesCaldera);
 
 /**
  * @swagger
@@ -25,7 +25,7 @@ router.get('/mantenciones/caldera', getMantencionesCaldera);
  *     tags: [Mantenciones]
  */
 
-router.get('/mantenciones/calefont', getMantencionesCalefont);
+router.get('/mantenciones/calefont/:id', getMantencionesCalefont);
 
 /**
  * @swagger
