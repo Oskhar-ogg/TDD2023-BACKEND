@@ -79,30 +79,25 @@ export const deleteBitacora = async (req, res) => {
   }
 };
 
-export const MontoMesBitacora = async (req, res) => {
+export const MontoMes = async (req, res) => {
   try {
     const connect = await connection();
-    // Consulta final
-    const [rows] = await connect.query('SELECT Monto_Mes FROM MontoMes');
-    res.json(rows);
+    const [rows] = await connect.query('SELECT SUM(bitacora_valor_cobrado) FROM bitacora WHERE MONTH(bitacora_fecha) = MONTH(CURRENT_DATE())');
+    res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-};
-
-    
- 
-export const MontoBitacora = async (req, res) => {
+}
+export const MontoTotal = async (req, res) => {
   try {
     const connect = await connection();
-    const [row] = await connect.query('SELECT Ingreso_Total_Pyme FROM MontoTotal');
-    res.json(row);
+    const [rows] = await connect.query('SELECT SUM(bitacora_valor_cobrado) FROM bitacora');
+    res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-};
-
+}
     
 

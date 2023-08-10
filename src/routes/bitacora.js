@@ -1,5 +1,5 @@
 import  { Router } from 'express';
-import { getBitacora, getBitacoraCount, getBitacoras, saveBitacora, updateBitacora, deleteBitacora, MontoBitacora, MontoMesBitacora } from '../controllers/bitacora';
+import { getBitacora, getBitacoraCount, getBitacoras, saveBitacora, updateBitacora, deleteBitacora, MontoMes, MontoTotal } from '../controllers/bitacora';
 
 const router = Router()
 /** 
@@ -41,7 +41,7 @@ router.get('/bitacora/:id', getBitacoras)
  *          tags: [Bitacoras]
  */
 
-router.get('/bitacora/total', MontoBitacora)
+router.get('/bitacora/total', MontoTotal)
 
 /**
  * @swagger
@@ -51,7 +51,7 @@ router.get('/bitacora/total', MontoBitacora)
  *         tags: [Bitacoras]
 */
 
-router.get('/bitacora/mes', MontoMesBitacora)
+router.get('/bitacora/mes', MontoMes)
 
 /**
  * @swagger
