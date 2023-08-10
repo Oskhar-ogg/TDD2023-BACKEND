@@ -82,14 +82,8 @@ export const deleteBitacora = async (req, res) => {
 export const MontoMesBitacora = async (req, res) => {
   try {
     const connect = await connection();
-    
-    // Ejecutar las declaraciones SET
-    await connect.query('SET @fecha_actual = CURDATE()');
-    await connect.query('SET @fecha_inicio = DATE_SUB(@fecha_actual, INTERVAL 1 MONTH)');
-    await connect.query('SET @fecha_fin = @fecha_actual');
-    
     // Consulta final
-    const [rows] = await connect.query('SELECT SUM(bitacora_valor_cobrado) FROM bitacora WHERE bitacora_estado = "Finalizado" AND bitacora_fecha BETWEEN @fecha_inicio AND @fecha_fin');
+    const [rows] = await connect.query('SELECT * FROM MontoMes');
     
     res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
   } catch (error) {
@@ -103,7 +97,7 @@ export const MontoBitacora = async (req, res) => {
     const connect = await connection();
     
     // Consulta
-    const [rows] = await connect.query('SELECT SUM(bitacora_valor_cobrado) FROM bitacora');
+    const [rows] = await connect.query('SELECT * FROM MontoTotal');
     
     res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
   } catch (error) {
