@@ -84,25 +84,27 @@ export const MontoMesBitacora = async (req, res) => {
     const connect = await connection();
     // Consulta final
     const [rows] = await connect.query('SELECT * FROM MontoMes');
-    
-    res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
+    res.json(rows);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-}
+};
 
+    
+ 
 export const MontoBitacora = async (req, res) => {
   try {
     const connect = await connection();
     
     // Consulta
     const [rows] = await connect.query('SELECT * FROM MontoTotal');
-    
-    res.json(rows[0]['SUM(bitacora_valor_cobrado)']);
+    res.json(rows);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-}
+};
+
+    
 

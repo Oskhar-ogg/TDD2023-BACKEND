@@ -11,7 +11,6 @@ const router = Router()
  *    
 */
 
-
 router.get('/bitacora/', getBitacora)
 /**
  * @swagger
