@@ -41,7 +41,7 @@ router.get('/bitacora/:id', getBitacoras)
  *          tags: [Bitacoras]
  */
 
-router.get('/bitacora/total', MontoTotal)
+router.get('/total', MontoTotal)
 
 /**
  * @swagger
@@ -51,7 +51,7 @@ router.get('/bitacora/total', MontoTotal)
  *         tags: [Bitacoras]
 */
 
-router.get('/bitacora/mes', MontoMes)
+router.get('/mes', MontoMes)
 
 /**
  * @swagger
