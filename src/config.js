@@ -1,7 +1,7 @@
 
 export const configuracion = {
-    host: 'mysqltrans.face.ubiobio.cl',
-    database: 'oscarc_bd',
-    user: 'ocaro',
-    password: 'oscar2023',
+    host: 'sql10.freesqldatabase.com',
+    database: 'sql10638952',
+    user: 'sql10638952',
+    password: '12bf3vVvwT',
 }
